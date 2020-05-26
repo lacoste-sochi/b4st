@@ -16,7 +16,7 @@
 
 <?php b4st_footer_after();?>
 
-<?php b4st_bottomline();?>
+<!-- b4st_bottomline(); -->
 
 <!--
 Viewport width indicator

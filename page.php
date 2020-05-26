@@ -7,8 +7,7 @@
   <?php dimox_breadcrumbs(); ?>
 <?php } */ ?>
 
-<main id="site-main"
- class="mt-5">
+<main id="site-main">
 
   <?php get_template_part('loops/page-content'); ?>
 
@@ -50,6 +49,6 @@
     </div>
   </section>
   <?php endif;
-
+  
   get_footer(); 
 ?>

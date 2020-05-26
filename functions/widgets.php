@@ -41,7 +41,7 @@ function b4st_widgets_init() {
     'name'            => __( 'Footer', 'b4st' ),
     'id'              => 'footer-widget-area',
     'description'     => __( 'Use 1, 2, 3 or 4 widgets.', 'b4st' ),
-    'before_widget'   => '<div class="%1$s %2$s col-sm">',
+    'before_widget'   => '<div class="%1$s %2$s col-sm my-3 my-md-0 text-center text-md-left">',
     'after_widget'    => '</div>',
     'before_title'    => '<h2 class="h4">',
     'after_title'     => '</h2>',

@@ -4,7 +4,6 @@
 ?>
 
 <main id="site-main" class="mt-5">
-
   <header class="mb-5 text-center">
     <span class="text-muted"><?php  _e('Archive', 'b4st'); ?></span>
     <h1>
@@ -40,6 +39,7 @@
   ?>
 
 </main>
+<h1>НОВОСТИ2</h1>
 
 <?php 
   b4st_main_after();
@@ -56,6 +56,7 @@
       </div>
     </div>
   </section>
+
   <?php endif;
 
   get_footer(); 

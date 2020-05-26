@@ -14,7 +14,7 @@
 	function dimox_breadcrumbs() {
 
 	/* === OPTIONS === */
-	$text['home']     = 'Home'; // text for the 'Home' link
+	$text['home']     = 'Главная'; // text for the 'Home' link
 	$text['category'] = 'Archive by Category "%s"'; // text for a category page
 	$text['search']   = 'Search Results for "%s" Query'; // text for a search results page
 	$text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
