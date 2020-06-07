@@ -143,23 +143,24 @@ endif;
 <?php 
 $images = get_field('fotografii');
 if( $images ): ?>
-        <?php foreach( $images as $image ): ?>
-          
-          <!-- <script>
-              console.log(  json_encode($image); ;
-          </script> -->
-
+        <?php foreach( $images as $key => $image ) {
+        if ($key <= 5) : ?>
           <div class="col-12 col-md-6">
             <a href="<?php echo esc_url($image['url']); ?>">
                        <img class="photoSlider" src="<?php echo esc_url($image['sizes']['large']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                   </a>
                   <p><?php echo esc_html($image['caption']); ?></p>
           </div>
-        <?php endforeach; ?>
+        <?php else : ?>
+          <a class="d-none" href="<?php echo esc_url($image['url']); ?>"></a>
+        <?php 
+        endif;
+        }
+        ?>
 <?php endif; ?>
         </div>
         <div class="col-12">
-          <a class="galleryShow mx-auto">Посмотреть еще</a>
+          <span class="galleryShow mx-auto">Посмотреть еще</span>
         </div>
       </div>
     </div>

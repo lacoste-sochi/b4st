@@ -70,7 +70,7 @@
 			e.preventDefault();
 		  });
 
-		$('.photoBlock').magnificPopup({
+		const GALLERYMAIN = $('.section__gallery').magnificPopup({
 			delegate: 'a',
 			type: 'image',
 			tLoading: 'Loading image #%curr%...',
@@ -88,6 +88,28 @@
 			}
 		});
 
+		$('.galleryShow').click(function() {
+			GALLERYMAIN.magnificPopup('open', 6);
+		});
+
+		$('.open-popup-link').click(function() {
+			$('#roomTitleForm').val($(this).siblings(".roomTitle").text());
+		});
+
+		$('.open-popup-link').magnificPopup({
+			type:'inline',
+			midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+		  });
+
+		$('.sliderRooms').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+				delegate: 'a', // the selector for gallery item
+				type: 'image',
+				gallery: {
+				  enabled:true
+				}
+			});
+		});
 
 	$(".sliderSection-1").slick({
 		dots: true,
@@ -140,7 +162,76 @@
     	if (scrolled <= 50 && window.location.pathname == '/') {
     	$('.header__nav').removeClass('scrolled');
     	}
-    });
+	});
+	
+	/* Локализация datepicker */
+$.datepicker.regional['ru'] = {
+	closeText: "Закрыть",
+	prevText: "&#x3C;Пред",
+	nextText: "След&#x3E;",
+	currentText: "Сегодня",
+	monthNames: [ "Января","Февраля","Марта","Апрела","Мая","Июня",
+	"Июля","Августа","Сентября","Октября","Ноября","Декабря" ],
+	monthNamesShort: [ "Янв","Фев","Мар","Апр","Май","Июн",
+	"Июл","Авг","Сен","Окт","Ноя","Дек" ],
+	dayNames: [ "воскресенье","понедельник","вторник","среда","четверг","пятница","суббота" ],
+	dayNamesShort: [ "вск","пнд","втр","срд","чтв","птн","сбт" ],
+	dayNamesMin: [ "Вс","Пн","Вт","Ср","Чт","Пт","Сб" ],
+	weekHeader: "Нед",
+	dateFormat: "dd.mm.yy",
+	firstDay: 1,
+	isRTL: false,
+	showMonthAfterYear: false,
+	yearSuffix: ""
+};
+$.datepicker.setDefaults($.datepicker.regional['ru']);
+
+$("#forms__dateFrom").datepicker({
+	dateFormat: "dd MM yy года",
+	minDate: 0,
+	onSelect: function (date) {
+		var date2 = $('#forms__dateFrom').datepicker('getDate');
+		date2.setDate(date2.getDate() + 1);
+		$('#forms__dateTo').datepicker('setDate', date2);
+		//sets minDate to dt1 date + 1
+		$('#forms__dateTo').datepicker('option', 'minDate', date2);
+	}
+});
+$('#forms__dateTo').datepicker({
+	dateFormat: "dd MM yy года",
+	onClose: function () {
+		var dt1 = $('#forms__dateFrom').datepicker('getDate');
+		var dt2 = $('#forms__dateTo').datepicker('getDate');
+		if (dt2 <= dt1) {
+			var minDate = $('#forms__dateTo').datepicker('option', 'minDate');
+			$('#forms__dateTo').datepicker('setDate', minDate);
+		}
+	}
+});
+
+$('.sliderRooms').slick({
+	dots: true,
+	arrows: true,
+	infinite: true,
+	autoplay: true,
+	autoplaySpeed: 2000,
+	speed: 300,
+	slidesToShow: 1,
+  });
+
+  document.addEventListener( 'wpcf7mailsent', function( event ) {
+	$.magnificPopup.close();
+	alert('Заявка успешно отправлено, скоро мы с Вами свяжемся для подтверждения брони. Спасибо');
+  }, false );
+
+
+
+
+
+
+
+
+
 
 
 	});

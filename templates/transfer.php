@@ -28,7 +28,7 @@
 if( have_rows('marshruty') ):
 // loop through the rows of data
     while ( have_rows('marshruty') ) : the_row(); ?>
-    <div class="col-12">
+    <div class="col-12 mt-3">
       <div class="imgStocksArchive" style="background-image: url(<?php the_sub_field('fonovaya_kartinka'); ?>)">
       <div class="wrapperGradientTransfer"></div>
         <div class="transferBlock">
@@ -66,10 +66,33 @@ else :
 endif;
 ?>
       </div>
-      <div class="row">
-        <div class="offset-2 col-10">
+      <div class="row transferClassAuto">
+        <div class="offset-2 col-10 sectionsClassAuto">
           <h2 class="title">Класс авто</h2>
         </div>
+<?php
+// check if the repeater field has rows of data
+if( have_rows('klass_avto') ):
+// loop through the rows of data
+    while ( have_rows('klass_avto') ) : the_row(); ?>
+    <div class="col-12 col-md-6 mt-3 mt-md-0">
+      <div class="imgStocksArchive" style="background-image: url(<?php the_sub_field('fonovaya_kartinka'); ?>)">
+      <div class="wrapperGradientTransfer"></div>
+        <div class="transferBlock">
+          <div class="transferBlockDesc2">
+              <p class="transferInfo"><?php the_sub_field('nazvanie_klassa'); ?></p>
+              <p class="tarifName"><?php the_sub_field('model_avtomobilya'); ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<?php
+    endwhile;
+else :
+    // no rows found
+endif;
+?>
+
       </div>
     </div>
   </section>

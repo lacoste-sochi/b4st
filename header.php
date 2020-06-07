@@ -14,8 +14,15 @@
 <nav class="header__nav">
   <div class="container h-100">
     <div class="row align-items-center h-100 px-2 px-md-0">
-      <div class="col-9 col-md-4 order-2 order-md-1 d-flex align-center">
-        <img src="<?= get_template_directory_uri(); ?>/theme/img/phone.svg" alt="иконка телефона"><a class="header__phone" href="tel:<?php the_field('nomer_telefona', 5); ?>"><?php the_field('nomer_telefona', 5); ?></a>
+      <div class="col-9 col-md-4 order-2 order-md-1 d-flex align-center flex-column">
+        <div>
+          <img src="<?= get_template_directory_uri(); ?>/theme/img/phone.svg" alt="иконка телефона"><a class="header__phone" href="tel:<?php the_field('nomer_telefona', 5); ?>"><?php the_field('nomer_telefona', 5); ?></a>
+        </div>
+        <div class="mt-1 ml-5">
+        <a class="header__phone ml-0" href="https://wa.me/<?php the_field('whatsapp', 5); ?>"><img class="iconHeaderSN" src="<?= get_template_directory_uri(); ?>/theme/img/icon__whatsapp.svg" alt="icon whatsapp"></a>
+        <a class="header__phone" href="viber://chat?number=<?php the_field('viber', 5); ?>"><img class="iconHeaderSN" src="<?= get_template_directory_uri(); ?>/theme/img/icon__viber.svg" alt="icon viber"></a>
+        <a class="header__phone" href="tg://resolve?domain=<?php the_field('telegram', 5); ?>"><img class="iconHeaderSN" src="<?= get_template_directory_uri(); ?>/theme/img/icon__telegram.svg" alt="icon telegram"></a>
+        </div>
       </div>
       <div class="col-12 col-md-4 order-1 order-md-2 text-center">
 

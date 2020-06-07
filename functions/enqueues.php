@@ -23,6 +23,9 @@ if ( ! function_exists('b4st_enqueues') ) {
 		wp_register_style('slick-theme', get_template_directory_uri() . '/theme/css/slick-theme.css', false, null);
 		wp_enqueue_style('slick-theme');
 
+		wp_register_style('jquery-datepicker', '//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css', false, null);
+		wp_enqueue_style('jquery-datepicker');
+
 		wp_register_style('fontawesome5', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css', false, '5.11.2', null);
 		wp_enqueue_style('fontawesome5');
 
@@ -38,6 +41,9 @@ if ( ! function_exists('b4st_enqueues') ) {
 
 		wp_register_script('jquery-3.4.1', 'https://code.jquery.com/jquery-3.4.1.min.js', false, '3.4.1', true);
 		wp_enqueue_script('jquery-3.4.1');
+
+		wp_register_script('jquery-ui', 'https://code.jquery.com/ui/1.12.1/jquery-ui.js', false, null, true);
+		wp_enqueue_script('jquery-ui');
 
 		wp_register_script('velocity', get_template_directory_uri() . '/theme/js/velocity.min.js', false, null, true);
 		wp_enqueue_script('velocity');
