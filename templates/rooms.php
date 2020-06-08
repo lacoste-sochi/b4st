@@ -21,13 +21,12 @@
         <div class="offset-2 col-10 sectionsClassAuto">
           <h1 class="title">Наши номера</h1>
         </div>
-
         <?php
 // check if the repeater field has rows of data
 if( have_rows('nomera') ):
 // loop through the rows of data
     while ( have_rows('nomera') ) : the_row(); ?>
-    <div class="col-12 col-md-6 mt-3 mt-md-0">
+    <div class="col-12 col-md-6 my-3">
     <div class="sliderRooms">
       <?php 
       $images = get_sub_field('fotografii_nomera');
@@ -49,11 +48,27 @@ if( have_rows('nomera') ):
         <?php endforeach; ?>
       <?php endif; ?>
     </div>
-
-    <p class="roomTitle"><?php the_sub_field('nazvanie_nomera'); ?></p>
-    <p class="roomDesc"><?php the_sub_field('opisanie_nomera'); ?></p>
+    <div class="rooms__toolbar">
+    <?php
+    // переменные
+    $nomer = get_sub_field('nomer');	
+    if( $nomer ): ?>
+      <div><span class="roomTitle"><?= $nomer['nazvanie_nomera']; ?></span></div>
+    <?php endif; ?>
+    <?php
+    // переменные
+    $tarif = get_sub_field('tarif');	
+    if( $tarif ): ?>
+      <div class="roomPrice"><span class="roomBuyCount"><?= $tarif['czena']; ?></span><span class="roomCondition ml-1 ml-md-0"><?php echo $tarif['uslovie_czeny']; ?></span></div>
+    <?php endif; ?>
+    </div>
+    <?php
+    // переменные
+    $nomer = get_sub_field('nomer');	
+    if( $nomer ): ?>
+    <div class="roomDesc"><?= $nomer['opisanie_nomera']; ?></div>
+    <?php endif; ?>
     <a href="#test-popup" class="open-popup-link mx-auto mx-md-0">ЗАБРОНИРОВАТЬ</a>
-      
     </div>
 <?php
     endwhile;

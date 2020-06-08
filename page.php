@@ -7,7 +7,7 @@
   <?php dimox_breadcrumbs(); ?>
 <?php } */ ?>
 
-<main id="site-main">
+<main id="site-main" class="section_news">
 
   <?php get_template_part('loops/page-content'); ?>
 
@@ -35,20 +35,6 @@
 
 <?php 
   b4st_main_after();
-
-  if(is_active_sidebar('main-widget-area')): ?>
-  <section id="site-main-widgets" class="bg-light">
-    <div class="container">
-      <div class="row pt-5 pb-4" id="main-widget-area" role="navigation">
-        <?php
-          b4st_main_widgets_before();
-          dynamic_sidebar('main-widget-area');
-          b4st_main_widgets_after();
-        ?>
-      </div>
-    </div>
-  </section>
-  <?php endif;
   
   get_footer(); 
 ?>

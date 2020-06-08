@@ -103,14 +103,6 @@ a:hover {
     transition: 0.5s;
 }
 
-#site-main {
-    margin-top: 160px;
-}
-
-/* #slider {
-    width: 100%;
-} */
-
 .scrolled .logo, .logo2 {
     display: none;
 }
@@ -494,7 +486,11 @@ width: 11px;
 
 .section_news,
 .sectionsContactsPage {
-    margin-top: 240px;
+    margin-top: 200px;
+}
+
+.sectionsContactsPage {
+    margin-bottom: 100px;
 }
 
 .newsPreviewBlock {
@@ -704,11 +700,11 @@ width: 11px;
 }
 
 .sectionsContactsPageBlockContacts {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .sectionsClassAuto {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .blockMaps {
@@ -850,6 +846,7 @@ width: 11px;
     width: 100%;
     height: 350px;
     object-fit: cover;
+    border-radius: 20px;
 }
 
 .sliderRooms .slick-next {
@@ -867,7 +864,7 @@ width: 11px;
     font-weight: 600;
     font-size: 26px;
     line-height: 31px;
-    color: #000000;
+    color: #942d22;
 }
 
 #roomTitleForm {
@@ -886,6 +883,8 @@ width: 11px;
     line-height: 140%;
     color: #000000;
     opacity: 0.6;
+    min-height: 200px;
+    margin-top: 10px;
 }
 
 .open-popup-link {
@@ -900,6 +899,33 @@ width: 11px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+}
+
+.rooms__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.roomPrice {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.roomBuyCount {
+    color: #4c6930;;
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.roomCondition {
+    line-height: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4c6930;;
 }
 
 
@@ -915,6 +941,22 @@ width: 11px;
 
 /* Малые девайсы («ландшафтные», < 768px) */
 @media (max-width: 767.98px) {
+    .rooms__toolbar {
+        flex-direction: column;
+    }
+
+    .roomPrice {
+        flex-direction: row;
+    }
+
+    .transferBlock {
+        height: 300px;
+    }
+
+    .sliderRooms__slide {
+        height: 200px;
+    }
+
     .title {
         font-size: 24px;
     }
@@ -956,6 +998,22 @@ width: 11px;
     }
     .transferBlockDesc {
         left: 30px;
+    }
+    .transferClassAuto {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .sectionsClassAuto {
+        margin-bottom: 0px;
+    }
+    .sectionsContactsPageBlockContacts {
+        margin-top: 0px;
+    }
+    .section_news, .sectionsContactsPage {
+        margin-top: 160px;
+    }
+    .advantagesContactsPage {
+        margin: 50px auto;
     }
 }
 

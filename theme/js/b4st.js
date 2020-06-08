@@ -64,7 +64,7 @@
 		// 	$(this).slick('slickPrev');
 		//   }
 		// }));
-		$("body").on('click', '[href*="#"]', function(e){
+		$("#footer").on('click', '[href*="#"]', function(e){
 			var fixed_offset = 100;
 			$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
 			e.preventDefault();
@@ -93,7 +93,7 @@
 		});
 
 		$('.open-popup-link').click(function() {
-			$('#roomTitleForm').val($(this).siblings(".roomTitle").text());
+			$('#roomTitleForm').val($(this).siblings(".rooms__toolbar").find('.roomTitle').text());
 		});
 
 		$('.open-popup-link').magnificPopup({

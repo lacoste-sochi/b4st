@@ -23,19 +23,19 @@
         </div>
       </div>
       <div class="row sectionsContactsPageBlockContacts">
-        <div class="col-4">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
           <div class="blockContacts">
             <p class="titleDescContacts"><img class="mr-2" src="<?= get_template_directory_uri(); ?>/theme/img/icon__gps.svg" alt="иконка местонахождения">Адрес</p>
             <a class="infoContacts" href="<?php the_field('mestonahozhdenie', 5); ?>"><?php the_field('mestonahozhdenie', 5); ?></a>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
           <div class="blockContacts">
             <p class="titleDescContacts"><img class="mr-2" src="<?= get_template_directory_uri(); ?>/theme/img/icon__phone.svg" alt="иконка телефона">Номер телефона</p>
             <a class="infoContacts" href="tel:<?php the_field('nomer_telefona', 5); ?>"><?php the_field('nomer_telefona', 5); ?></a>
           </div>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4 mt-3 mt-md-0">
           <div class="blockContacts">
             <p class="titleDescContacts"><img class="mr-2" src="<?= get_template_directory_uri(); ?>/theme/img/icon__mail.svg" alt="иконка email">Email</p>
             <a class="infoContacts" href="mailto:<?php the_field('email', 5); ?>"><?php the_field('email', 5); ?></a>
@@ -58,7 +58,7 @@ if( have_rows('preimushhestva_nizhe_karty') ):
 		$preimushhestvo = get_sub_field('preimushhestvo');
     $doptekst = get_sub_field('doptekst');
 ?>
-  <div class="col-4 d-inline">
+  <div class="col-12 col-md-4 mt-5 mt-md-0 d-inline">
     <img class="icon__blockContacts" src="<?= $icon ?>" alt="Иконка преимуществ">
     <span class="advantages__blockContacts"><?= $preimushhestvo ?></span>
     <span class="advantages__blockContacts2"><?= $doptekst ?></span>

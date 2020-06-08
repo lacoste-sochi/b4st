@@ -11,7 +11,7 @@
           <h2 class="title">Акции</h2>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mt-0 mt-md-5">
         <?php get_template_part('loops/index-loop-stocks'); ?>
       </div>
     </div>
